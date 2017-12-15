@@ -31,6 +31,11 @@ public class SimpleOperationsService implements OperationsService {
 
         //create a response
         Response response = new Response();
+        response.setUser(sitter);
+        response.setResponseStatus(ResponseStatus.PROPOSED);
+        request.addResponse(response);
+        response.setDetails("");
+        responseRepo.save(response);
         //TODO 2. populate & save the response object
         return response;
     }
